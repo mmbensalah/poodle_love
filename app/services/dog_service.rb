@@ -1,6 +1,10 @@
 class DogService
 
-  def get_poodles
+  def get_urls
+    get_data[:message][0..8]
+  end
+
+  def get_data
     to_json(conn.get('/api/breed/poodle/images'))
   end
 
