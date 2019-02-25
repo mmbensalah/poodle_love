@@ -1,7 +1,17 @@
 <h1>Poodle Love</h1>
 <div class="images">
   <% @images.map do |image| %>
-  <img src=<%= image.url %> alt="dog">
-
+  <div class="imageAndRank">
+    <div class="image-div"><img src=<%= image.url %> alt="dog"></div>
+    <div class="rating">
+      <select class="dropdown">
+        <option value="0">Select Ranking</option>
+        <option value="1">Best</option>
+        <option value="2">Great</option>
+        <option value="3">Good</option>
+        <option value="4">Cute</option>
+      </select>
+    </div>
+  </div>
   <% end %>
 </div>

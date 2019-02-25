@@ -11,5 +11,20 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
+//= require jquery_ujs
 //= require activestorage
+//= require_self
 //= require_tree .
+
+document.addEventListener("turbolinks:load", function() { alert("ok!") });
+
+function main() {
+  var ranking = $( ".dropdown option:selected" ).val();
+  if(ranking === "1"){
+    debugger
+
+    alert('hi');
+  }
+}
+$(document).ready(main);
