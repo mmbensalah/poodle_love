@@ -13,4 +13,11 @@ describe DogService do
 
     expect(images.class).to eq(Array)
   end
+  it 'creates Poodle objects' do
+    service = DogService.new
+    images = service.create_poodles
+
+    expect(images.class).to eq(Array)
+    expect(images.first).to be_instance_of(Poodle)
+  end
 end
