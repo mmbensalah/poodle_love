@@ -1,5 +1,11 @@
 class DogService
 
+  def create_poodles
+    get_urls.map do |url|
+      Poodle.new(url)
+    end
+  end
+
   def get_urls
     get_data[:message][0..8]
   end
