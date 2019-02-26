@@ -8,6 +8,8 @@ describe 'the poodle endpoint' do
 
     patch "/api/v1/poodles", params: data
 
-    expect(response.status).to eq 200
+    expect(response.status).to eq 204
+    expect(Poodle.last.ranking).to eq(3)
+    expect(Poodle.last.id).to eq(poodle.id)
   end
 end
