@@ -20,10 +20,20 @@
 document.addEventListener("turbolinks:load", function() { alert("ok!") });
 
 function main() {
-  $(".button").on('click', function() {
+  $(".btn-patch").on('click', function() {
     var ranking = $( ".dropdown option:selected" ).val();
-    alert('hi');
+    var id      = this.id;
+    $.ajax({
+      type: 'PATCH',
+      url: "/api/v1/poodles",
+      data: { "id": id, "ranking": ranking },
+      success: function(result) {
+        alert('Poodle has been ranked!');
+      },
+      error: function(response) {
+        alert(response.responseJSON.error);
+      }
+    });
   })
-  }
 
 $(document).ready(main);
