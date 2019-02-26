@@ -22,9 +22,6 @@ document.addEventListener("turbolinks:load", function() { alert("ok!") });
 function main() {
   $(".button").on('click', function() {
     var ranking = $( ".dropdown option:selected" ).val();
-    
-    debugger
-
     alert('hi');
   })
   }
