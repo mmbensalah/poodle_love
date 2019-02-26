@@ -2,7 +2,7 @@ class DogService
 
   def create_poodles
     get_urls.map do |url|
-      Poodle.new(url)
+      Poodle.create(url: url, ranking: 0)
     end
   end
 

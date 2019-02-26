@@ -1,0 +1,3 @@
+class Poodle < ApplicationRecord
+
+end
