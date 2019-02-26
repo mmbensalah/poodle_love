@@ -13,7 +13,7 @@ describe DogService do
 
     expect(images.class).to eq(Array)
   end
-  it 'creates Poodle objects' do
+  it 'creates Poodle objects for db' do
     service = DogService.new
     images = service.create_poodles
 
