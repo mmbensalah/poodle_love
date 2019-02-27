@@ -18,8 +18,7 @@
 //= require_tree .
 
 document.addEventListener("turbolinks:load", function() { alert("ok!") });
-
-function main() {
+$(document).ready(function(){
   $(".btn-patch").on('click', function() {
     var ranking = $( ".dropdown option:selected" ).val();
     var id      = this.id;
@@ -35,5 +34,31 @@ function main() {
       }
     });
   })
-
-$(document).ready(main);
+  $(".sort").on('click', function() {
+    $.ajax({
+      type: 'GET',
+      url: "/api/v1/sort",
+      success: function(result) {
+        $( ".images" ).empty();
+        result.forEach(function(poodle) {
+          $( ".images" ).append(
+          `<div class="image"><img src=${poodle.url} alt="dog">
+            <select class="dropdown">
+              <option value="0">Select Ranking</option>
+              <option value="1">Best</option>
+              <option value="2">Great</option>
+              <option value="3">Good</option>
+              <option value="4">Cute</option>
+              <option value="5">Shoo</option>
+            </select>
+            <button class="btn-patch" id="<%= image.id %>">Rank!</button>
+          </div>`)
+        })
+        alert('Sorted');
+      },
+      error: function(response) {
+        alert(response.responseJSON.error);
+      }
+    });
+  })
+});
