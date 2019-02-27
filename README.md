@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Poodle Love is a practice tech challenge. The production link is: https://poodle-love.herokuapp.com/
 
-Things you may want to cover:
+In order to run this code locally:
 
-* Ruby version
+1. Clone this repository into a local directory on your machine
+2. Run `rails db:{create,migrate}`
+3. Run `rails s` to see the app locally at http://localhost:3000
 
-* System dependencies
+To run the test suite:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Run `rspec`
